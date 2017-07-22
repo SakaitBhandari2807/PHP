@@ -1,0 +1,61 @@
+           #form{
+                width: 420px;
+                margin: 100px 20px 10px 510px;
+                border: 1px solid #000;
+                background-color: white;
+                border: 1px solid white;
+                color: black;
+            }
+            input[type=text],input[type=password],input[type=email],input[type=number]{
+                width:400px;
+                //height:100%;
+                padding:12px 20px;
+                margin: 8px 2px 4px 5px;
+                box-sizing: border-box;
+                //border:none;
+                //border-left: 2px solid red;
+                //border-bottom: 2px solid red;
+                border-radius: 4px;
+               // background-color: #3CBC8D;
+                //color: white;
+            }
+            input[type=text],input[type=password]{
+               width:400px;
+               padding:12px 20px;
+                margin: 8px 2px 0px 5px;
+                box-sizing: border-box;
+                border-radius: 4px;
+            }
+            button{
+                background-color: #4CAF50;
+                border: none;
+                color: white;
+                text-decoration: none;
+                padding: 16px 32px;
+                cursor: pointer;
+                margin: 8px 2px 4px 5px;
+                width: 400px;
+            }
+            p{
+                text-align: center;
+                font-size: 30px;
+            }
+            #register{
+                background-color: #4CAF50;
+                border: none;
+                color: white;
+                text-decoration: none;
+                padding: 16px 25px;
+                cursor: pointer;
+                margin: 8px 2px 4px 6px;
+                width: 350px;
+                font-size: 20px;
+            }
+            p>a{
+                color:white;
+            }
+            #error-in-form{
+                text-align: center;
+                color: red;
+                font-size: 20px;
+            }

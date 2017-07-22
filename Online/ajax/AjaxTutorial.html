@@ -1,0 +1,50 @@
+<html>
+  <head>
+    <script>
+        var XMLHttpRequestObject;
+
+        if(window.XMLHttpRequest){
+          XMLHttpRequestObject=new XMLHttpRequest();
+        }
+        else(window.ActiveXObject) {
+          XMLHttpRequestObject=new ActiveXObject("Microsoft.XMLHTTP");
+        }
+
+        function convertTemp(){
+            if(XMLHttpRequestObject){
+
+              XMLHttpRequestObject.open("POST","convert.php");
+              XMLHttpRequestObject.setRequestHeader('Content-Type','application/x-www-form-urlencoded');
+
+              XMLHttpRequestObject.onreadystatechange=function(){
+                if(XMLHttpRequestObject.readyState==4 && XMLHttpRequestObject.status==200){
+                  var returnedData=XMLHttpRequestObject.responseText;
+                  var celsius=document.getElementById("celsius");
+                  celsius.value=returnedData;
+                }
+              }
+              var farenheit=document.getElementById("farenheit").value;
+              XMLHttpRequestObject.send("data="+farenheit);
+            }
+            return false;
+        }
+
+    </script>
+  </head>
+  <body>
+    <h2>Enter Farenheit to Get Celsius</h2>
+    <form method='post'>
+      <table>
+         <tr>
+           <td>Enter Farenheit:</td>
+           <td><input type="text" name="farenheit" id="farenheit" size="3"/><td>
+         </tr>
+         <tr>
+           <td>Celsius:</td>
+           <td><input type="text" disabled="disabled" id="celsius" name="celsius" size="3"/></td>
+        </tr>
+     </table>
+      <p><input type="button" value="convert" onClick="convertTemp();"/></p>
+    </form>
+  </body>
+</html>

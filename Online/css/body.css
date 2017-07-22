@@ -1,0 +1,20 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : May 11, 2016, 4:01:12 PM
+    Author     : hp-pc
+*/
+body {
+    //position: relative;
+    background: url('../images/onlineExamImage.jpg');
+    background-repeat: no-repeat;
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    overflow: hidden;
+    display:compact;
+}
+

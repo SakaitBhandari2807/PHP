@@ -1,0 +1,40 @@
+<html>
+  <head>
+    <title>
+    </title>
+    <script>
+       var xhr=null;
+       function quote(){
+         try{
+           xhr=new XMLHttpRequest();
+         }
+         catch(Exception e){
+           xhr=new ActiveXObject("Microsoft.XMLHTTP");
+         }
+         if (xhr==null) {
+           alert("Ajax not supported by the browser");
+           return;
+         }
+         var url="quote1.php?symbol="+document.getElementById("symbol").value;
+         xhr.onreadystatechange=handler;
+         xhr.open("GET",url,true);
+         xhr.send(null);
+       }
+       function handler(){
+         if(xhr.readyState==4){
+           if(xhr.status==200)
+               alert(xhr.responseText);
+          else
+               alert("Error with ajax call");
+         }
+       }
+    </script>
+  </head>
+  <body>
+      <form action="quote1.php" method="get" onsubmit="quote();return false;">
+          Symbol:<input type="text" name="symbol" id="symbol">
+          <br><br>
+          <input type="submit" value="Get Quote">
+      </form>
+  </body>
+</html>
